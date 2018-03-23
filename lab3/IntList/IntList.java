@@ -24,6 +24,18 @@ public class IntList {
         rest = rest0;
     }
 
+    public static IntList reverse(IntList A) {
+        if (A == null || A.rest == null) {
+            return A;
+        } else {
+            IntList reversed = reverse(A.rest);
+            A.rest.rest = A;
+            A.rest = null;
+            return reversed;
+        }
+    }
+
+
     /**
      * A List with null rest, and first = 0.
      */

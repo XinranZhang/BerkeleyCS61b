@@ -10,6 +10,25 @@ public class IntListTest {
      * assertEquals knows how to handle IntLists just fine.
      */
 
+
+    /**
+     * That the function returns a reversed list.
+     That the function is destructive, i.e. when it is done running,
+     the list pointed to by A has been tampered with. You can use assertNotEquals.
+     This is sort of a silly test.
+     That the method handles a null input properly.
+     */
+
+    @Test
+    public void testReverse() {
+        IntList first = IntList.list(1, 2, 3, 4);
+        assertEquals(IntList.list(4,3, 2,1), IntList.reverse(first));
+        // examine if the function is destructive
+        // assertNotEquals(IntList.reverse(first), first);
+        IntList second = IntList.list();
+        assertEquals(null, IntList.reverse(second));
+    }
+
     @Test
     public void testList() {
         IntList one = new IntList(1, null);
